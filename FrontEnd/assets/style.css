@@ -164,6 +164,10 @@ li:hover {
 	color: white;
 }
 
+.invisible {
+	display: none;
+}
+
 #contact {
 	width: 50%;
 margin: auto;
