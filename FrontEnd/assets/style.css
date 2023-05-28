@@ -58,6 +58,16 @@ header {
 	justify-content: space-between;
 	margin: 50px 0
 }
+
+header a {
+	text-decoration: none;
+	color: black;
+}
+
+header a:hover {
+	color: #B1663C;
+}
+
 section {
 	margin: 50px 0
 }
@@ -98,6 +108,69 @@ nav li {
 li:hover {
 	color: #B1663C;
 }
+
+/* Page LogIn */
+
+#login {
+	width: 50%;
+	margin: auto;
+	padding-top: 150px;
+}
+
+#login h2 {
+	display: flex;
+	justify-content: center;
+}
+
+
+#login form {
+	text-align: left;
+	margin: auto;
+	margin-top:30px;
+	display: flex;
+	flex-direction: column;
+	width: 379px;
+	margin-bottom: 355px;
+}
+
+
+#login input {
+	height: 50px;
+	font-size: 1.2em;
+	border: none;
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+}
+
+#login label {
+	margin: 2em 0 1em 0;
+}
+
+#login div {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	row-gap: 28px;
+	margin-top: 30px;
+}
+
+#login div button {
+	background: #1D6154;
+	border-radius: 60px;
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 37px;
+	padding: 20px 40px 20px 40px;
+	border: 1px solid;
+	width: 179px;
+}
+
+#login div a {
+	color: black;
+}
+
 #introduction {
 	display: flex;
 	align-items: center;
@@ -170,7 +243,7 @@ li:hover {
 
 #contact {
 	width: 50%;
-margin: auto;
+	margin: auto;
 }
 #contact > * {
 	text-align: center;
@@ -192,9 +265,11 @@ margin: auto;
 	border: none;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
+
 #contact label {
 	margin: 2em 0 1em 0;
 }
+
 #contact textarea {
 	border: none;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
