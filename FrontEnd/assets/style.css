@@ -171,6 +171,12 @@ li:hover {
 	color: black;
 }
 
+#wrong {
+	text-align: center;
+	color: red;
+	margin-top: 10px;
+}
+
 #introduction {
 	display: flex;
 	align-items: center;
