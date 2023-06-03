@@ -1,28 +1,35 @@
-const formLog = document.getElementById("login")
-const password = document.getElementById("password")
-let user = {
-    email: email,
-    password: password
-}
+const btnSubmit = document.getElementById("submit")
 
-async function postLog(email,password) {
-    const response = await fetch("http://localhost:5678/api/users/login", {
+
+async function postLog(email, password) {
+    const req = await fetch("http://localhost:5678/api/users/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(user)
+        body: JSON.stringify({
+            email: email,
+            password: password
+        })
     });
+    const response = await req.json();
+    return response;
 }
 
-formLog.addEventListener('submit', async function(event){
+btnSubmit.addEventListener('click', async function(event) {
+    event.preventDefault();
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
 
     if (email && password) {
-        const data = await response.json();
-        // window.location.href = './index.html';    
+        const login = await postLog(email, password);
+        const token = login.token;
+
+        if (token) {
+            sessionStorage.setItem("token", token)
+            location.replace("./index.html");
+        }
+
     } else {
         const messageErreur = document.getElementById("wrong");
         messageErreur.innerHTML = `Erreur dans l'identifiant ou le mot de passe`
     }
-    
 });

@@ -1,24 +1,38 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-	<meta charset="UTF-8">
-	<title>Sophie Bluel - Architecte d'intérieur</title>
+	<meta charset="UTF-8"><meta name="description" content="">
+	
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap" rel="stylesheet">
-	<meta name="description" content="">
+	
 	<link rel="stylesheet" href="./assets/style.css">
+	
+	<script src="https://kit.fontawesome.com/66f7f43b1d.js" crossorigin="anonymous"></script>
 	<script src="script.js" defer></script>
+
+	<title>Sophie Bluel - Architecte d'intérieur</title>
 </head>
+
 <body>
+	<div id="admin">
+		<div id="edit">
+			<i class="fa-regular fa-pen-to-square"></i>
+			<h3>Mode édition</h3>
+		</div>
+		<button>publier les changements</button>
+	</div>
 <header>
+
 	<h1>Sophie Bluel <span>Architecte d'inteérieur</span></h1>
 	<nav>
 		<ul>
 			<li>projets</li>
 			<li>contact</li>
-			<li>login</li>
+			<li><a href="login.html">login</a></li>
 			<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
 		</ul>
 	</nav>
@@ -27,6 +41,10 @@
 	<section id="introduction">
 		<figure>
 			<img src="./assets/images/sophie-bluel.png" alt="">
+			<div class="img-edit">
+				<i class="fa-regular fa-pen-to-square modif"></i>
+				<h3>Modifier</h3>
+			</div>
 		</figure>
 		<article>
 			<h2>Designer d'espace</h2>
@@ -36,7 +54,19 @@
 		</article>
 	</section>
 	<section id="portfolio">
-		<h2>Mes Projets</h2>
+		<div class="title-project">
+			<h2>Mes Projets</h2>
+			<div class="edit-project">
+				<i class="fa-regular fa-pen-to-square modif"></i>
+				<h3>Modifier</h3>
+			</div>
+		</div>
+		<div id="myModal" class="modal">
+			<div class="modal-content">
+				<span class="close">&times;</span>
+				<p>Some text in the Modal..</p>
+			  </div>
+		</div>
 		<div class="btns btnall">
 		
 		</div>

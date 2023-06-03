@@ -1,5 +1,22 @@
 const gallery = document.querySelector('.gallery');
 const buttons = document.querySelector('.btns');
+const token = window.sessionStorage.getItem("token");
+const titleProject = document.querySelector('.title-project')
+const imgEdit = document.querySelector('.img-edit')
+const modal = document.getElementById("myModal");
+const btnModal = document.querySelector(".edit-project")
+const closeModal = document.getElementsByClassName("close")[0];
+const navEdit = document.getElementById("admin");
+
+if (token) {
+    const test = document.querySelector("body");
+    buttons.style.display = "none";
+    titleProject.style.display = "flex";
+    imgEdit.style.display = "flex";
+    navEdit.style.display = "flex";
+    btnModal.style.display = "flex";
+}
+
 
 
 // Récuperer les projets de l'architecte 
@@ -67,6 +84,22 @@ fetch("http://localhost:5678/api/categories")
                 buttons.appendChild(button)
         }
     })
+
+    btnModal.onclick = function() {
+        modal.style.display = "block";
+      }
+      
+      // When the user clicks on <span> (x), close the modal
+      closeModal.onclick = function() {
+        modal.style.display = "none";
+      }
+      
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
 
 
 // local storage

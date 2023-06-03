@@ -53,11 +53,49 @@ body {
 	font-family: 'Work Sans' ;
 	font-size: 14px;
 }
+
+#admin {
+	background-color: #000;
+	color: white;
+	height: 60px;
+	display: none;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+}
+
+.fa-pen-to-square {
+	color: white;
+	border: none;
+}
+
+#edit {
+	display: flex;
+	column-gap: 9px;
+}
+
+#edit h3 {
+	color: white;
+}
+
+#admin button {
+	background-color: white;
+	border-radius: 60px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 10px 30px;
+
+}
+
 header {
 	display: flex;
+
 	justify-content: space-between;
 	margin: 50px 0
 }
+
 
 header a {
 	text-decoration: none;
@@ -94,6 +132,10 @@ h2{
 	font-size: 30px;
 	color: #1D6154
 }
+
+
+
+
 nav ul {
 	display: flex;
 	align-items: center;
@@ -204,6 +246,69 @@ li:hover {
 	text-align: center;
 	margin-bottom: 1em;
 }
+
+.modif {
+	color: rgb(0, 0, 0);
+	border: none;
+}
+
+.img-edit {
+	display: none;
+	gap: 12px;
+	margin: 20px 58px;
+	cursor: pointer;
+}
+
+.title-project {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+.edit-project {
+	display: none;
+	gap: 12px;
+	position: relative;
+	left: 30px;
+	top: 10px;
+	cursor: pointer;
+}
+
+.modal {
+	display: flex; 
+	position: fixed; 
+	z-index: 1; 
+	left: 0;
+	top: 0;
+	width: 100%; 
+	height: 100%; 
+	overflow: auto; 
+	background-color: rgb(0,0,0); 
+	background-color: rgba(0,0,0,0.4); 
+}
+
+.modal-content {
+	background-color: #fefefe;
+	margin: 25%;
+	padding: 20px;
+	border: 1px solid #888;
+	width: 50%; 
+}
+
+.close {
+	color: #aaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 .gallery {
 	width: 100%;
 	display: grid;
