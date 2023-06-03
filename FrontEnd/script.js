@@ -7,6 +7,9 @@ const modal = document.getElementById("myModal");
 const btnModal = document.querySelector(".edit-project")
 const closeModal = document.getElementsByClassName("close")[0];
 const navEdit = document.getElementById("admin");
+const openModal = document.querySelector(".open-modal")
+const contentModal = document.querySelector(".modal-content")
+const styleModal = document.querySelector(".modal")
 
 if (token) {
     const test = document.querySelector("body");
@@ -85,22 +88,17 @@ fetch("http://localhost:5678/api/categories")
         }
     })
 
-    btnModal.onclick = function() {
-        modal.style.display = "block";
-      }
-      
-      // When the user clicks on <span> (x), close the modal
-      closeModal.onclick = function() {
-        modal.style.display = "none";
-      }
-      
-      // When the user clicks anywhere outside of the modal, close it
-      window.onclick = function(event) {
-        if (event.target == modal) {
-          modal.style.display = "none";
-        }
-      }
 
+// Afficher la modale 
+
+openModal.addEventListener('click', function() {
+contentModal.style.display = "flex"
+styleModal.style.display = "flex"
+})
+
+closeModal.addEventListener('click', function(){
+modal.style.display = "none"
+})
 
 // local storage
 // Bearer token
