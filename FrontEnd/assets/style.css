@@ -54,11 +54,16 @@ body {
 	font-size: 14px;
 }
 
+
 #admin {
 	background-color: #000;
 	color: white;
 	height: 60px;
 	display: none;
+	position: absolute;
+	width: 100%;
+	top: 0;
+	left: 0;
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
@@ -93,7 +98,7 @@ header {
 	display: flex;
 
 	justify-content: space-between;
-	margin: 50px 0
+	margin: 80px 0px;
 }
 
 
@@ -291,10 +296,10 @@ li:hover {
 .modal-content {
 	background-color: #fefefe;
 	margin: 35%;
-	padding: 20px 100px;
+	padding: 20px 140px;
 	border: 1px solid #888;
 	width: 630px;
-	height: 731px;
+	height: 760px;
 	display: flex;
 	flex-direction: column;
 	gap: 20px;
@@ -381,7 +386,7 @@ li:hover {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 	grid-template-rows: 2fr 2fr 2fr 1fr;
-	grid-gap: 9px;
+	grid-gap: 10px;
 	width: 100%;
 	height: 100%;	
 }
@@ -398,9 +403,7 @@ li:hover {
 	height: 102.57px;
 }
 
-.edit-button {
-	
-}
+
 
 .line {
 	position: relative;
@@ -413,7 +416,7 @@ li:hover {
 
 /* Modale 2  */
 
-.modal2 {
+.modal-add-img {
 	display: none; 
 	position: fixed; 
 	z-index: 1; 
@@ -426,19 +429,18 @@ li:hover {
 	background-color: rgba(0,0,0,0.4); 
 }
 
-.modal-content2 {
+.modal-content-add {
 	background-color: #fefefe;
 	margin: 35%;
-	padding: 10px 30px;
+	padding: 0px 30px;
 	border: 1px solid #888;
 	width: 630px;
-	height: 670px;
+	height: 730px;
 	display: flex;
 	flex-direction: column;
 	gap: 20px;
 	align-items: center;
 	border-radius: 10px;
-	
 	
 }
 
@@ -471,7 +473,17 @@ li:hover {
 	font-weight: 700;
 }
 
-.modal-content2 .line {
+#img-file-input {
+	position: absolute;
+	top: 10000px;
+}
+
+#preview img {
+	width: 200px;
+	
+	object-fit: cover;  }
+
+.modal-content-add .line {
 	position: relative;
 	top: 20px;
 }
@@ -486,6 +498,18 @@ li:hover {
 	height: 36px;
 	color: white;
 	font-family: 'Syne';
+}
+
+.green {
+	background-color: #1D6154;
+	
+}
+
+.error {
+	display: flex;
+	justify-content: center;
+	position: relative;
+	top: 30px;
 }
 
 .form-img {
@@ -522,7 +546,7 @@ li:hover {
 	font-weight: 700;
 }
 
-.modal-content2 .close {
+.modal-content-add .close {
 	display: flex;
 	position: relative;
 	bottom: 10px;
@@ -546,7 +570,7 @@ li:hover {
 }
 
 
-.modal-content2 h2 {
+.modal-content-add h2 {
 	font-family: 'Work Sans';
 	font-style: normal;
 	font-weight: 400;

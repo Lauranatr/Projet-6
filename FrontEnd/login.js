@@ -1,6 +1,5 @@
 const btnSubmit = document.getElementById("submit")
 
-
 async function postLog(email, password) {
     const req = await fetch("http://localhost:5678/api/users/login", {
         method: "POST",
