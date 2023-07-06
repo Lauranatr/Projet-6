@@ -57,7 +57,7 @@ function getCategories() {
         const buttonAll = document.createElement('button')
         buttonAll.innerHTML = `Tous`
         
-    buttonAll.addEventListener("click", async function (event) {
+    buttonAll.addEventListener("click", function (event) {
         const figures = gallery.querySelectorAll(".invisible");
         figures.forEach(figure => figure.classList.remove("invisible"));
     })
@@ -94,7 +94,7 @@ if (token) {
     btnModal.style.display = "flex";
 }
 
-if (localStorage.getItem('token')) {
+if (token) {
     elementLogin.textContent = 'logout';
 } else {
     elementLogin.textContent = 'login';
@@ -165,7 +165,7 @@ closeModalAdd.addEventListener('click', function(){
 })
 
 window.onclick = function(event) {
-    if (event.target == modal ) {
+    if (event.target == modal || event.target == modalAddImg) {
       modal.style.display = "none";
       modalAddImg.style.display = "none";
     }
@@ -186,12 +186,10 @@ function deleteWorks(id) {
         if (response.ok) {
             errorDelete.innerText = "Supprimé !";
             errorDelete.style.color = "green";
-            console.log('Supprimer avec succès');
         }
         else {
             errorDelete.innerText = "Une erreur s'est produite";
             errorDelete.style.color = "red";
-            console.log('Une erreur s\'est produite lors de la suppression');
         }
     })
 }
@@ -202,7 +200,6 @@ addImg.addEventListener("click", (e) => {
 })
 
 const arrowLeft = document.querySelector(".arrowleft");
-console.log(arrowLeft)
 arrowLeft.addEventListener("click", (e) => {
     modalAddImg.style.display = "none";
     modal.style.display = "flex";
@@ -243,13 +240,11 @@ sendImg.addEventListener("click", (e) => {
             },
         })
             .then((response) => response.json())
-            .then((data) => {
-                console.log('Ajout de travail réussi :', data);
+            .then(() => {
                 modalAddImg.style.display = "none";
                 initWorks();
             })
     } else {
-        console.error('Tous les champs doivent être remplis')
         errorAdd.innerText = "Tous les champs doivent être remplis";
         errorAdd.style.color = "red";
     }
