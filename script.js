@@ -101,8 +101,8 @@ if (token) {
 };
 
 elementLogin.addEventListener('click', () => {
-    if (localStorage.getItem('token')) {
-        localStorage.removeItem('token');
+    if (sessionStorage.getItem('token')) {
+        sessionStorage.removeItem('token');
         elementLogin.textContent = 'Login';
     }
 });
@@ -130,7 +130,6 @@ openModal.addEventListener('click', function(event) {
 
             imgModal.setAttribute('src', work.imageUrl)
             imgModal.setAttribute("alt", work.title)
-            console.log(work.imageUrl)
 
             editButton.innerText = "éditer";
             editButton.classList.add = ("edit-button")
@@ -225,7 +224,7 @@ categorieLabel.addEventListener("change", (e) => {
 })
 
 sendImg.addEventListener("click", (e) => {
-    e.preventDefault
+    e.preventDefault();
     const formData = new FormData();
     formData.append('title', titleLabel.value);
     formData.append('category', categorieLabel.value);
